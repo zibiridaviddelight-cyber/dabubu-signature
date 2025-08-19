@@ -1,33 +1,45 @@
-// Mobile menu toggle
+// =======================================================
+// Main JavaScript for dabubu signature Website
+// This file handles all dynamic and interactive features.
+// =======================================================
+
+// === Mobile Menu Toggle ===
+// This function handles showing and hiding the mobile navigation menu.
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
 
-// Smooth scrolling for navigation links
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
+
+// === Smooth Scrolling for Navigation ===
+// This script enables smooth scrolling when clicking on internal links
+// and automatically closes the mobile menu afterward.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-        // Close mobile menu on link click
-        if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu on link click
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
         }
     });
 });
 
-// The old contact form javascript has been removed.
-// Formspree will handle the submission now.
-
-// === NEW FEATURE: Image Gallery Modal ===
-// This script handles opening a modal when a gallery image is clicked,
-// and closing it when the user clicks off the image or on the close button.
-// It uses a single modal element and updates its content dynamically.
-
-// Get the necessary elements
+// === Image Gallery Modal ===
+// This script creates a full-screen modal to show a larger version of
+// a gallery image when the user clicks on it.
 const galleryImages = document.querySelectorAll('.gallery-img img');
 const modal = document.createElement('div');
 modal.id = 'image-modal';
@@ -65,7 +77,7 @@ modal.addEventListener('click', (e) => {
     }
 });
 
-// === NEW FEATURE: Scroll-to-Top Button ===
+// === Scroll-to-Top Button ===
 // A small button that appears after scrolling down and scrolls the user back to the top of the page.
 const scrollToTopButton = document.createElement('button');
 scrollToTopButton.innerHTML = '&uarr;'; // Up arrow
@@ -87,7 +99,9 @@ scrollToTopButton.addEventListener('click', () => {
     });
 });
 
-// === NEW FEATURE: Gemini-powered Subject Line Suggester ===
+// === Gemini-powered Subject Line Suggester ===
+// This script uses the Gemini API to generate a professional email subject line
+// based on the user's message in the contact form.
 const suggestSubjectBtn = document.getElementById('suggest-subject-btn');
 const messageInput = document.getElementById('message');
 const subjectInput = document.getElementById('subject');
