@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Custom CSS for the website */
 body {
     font-family: 'Inter', sans-serif;
@@ -17,3 +18,24 @@ body {
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+=======
+/* Custom CSS for the website */
+body {
+    font-family: 'Inter', sans-serif;
+}
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+.hero-bg {
+    background-image: url('https://placehold.co/1920x1080/e2e8f0/64748b?text=Elegant+Fabric');
+    background-size: cover;
+    background-position: center;
+}
+.gallery-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+>>>>>>> 67fc5192af5dda021337137eb4d92112770d7bb9
