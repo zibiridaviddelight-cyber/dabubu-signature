@@ -4,31 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dabubu signature | Fashion Designer</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-        .hero-bg {
-            background-image: url('https://placehold.co/1920x1080/e2e8f0/64748b?text=Elegant+Fabric');
-            background-size: cover;
-            background-position: center;
-        }
-        .gallery-img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .gallery-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+    <!-- Header & Navigation -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-playfair font-bold text-gray-900">dabubu signature</a>
@@ -44,6 +27,7 @@
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#portfolio" class="block py-2 text-gray-600 hover:text-gray-900">Portfolio</a>
             <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900">About</a>
@@ -53,6 +37,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero-bg h-[60vh] md:h-[80vh] flex items-center">
             <div class="container mx-auto px-6 text-center bg-black bg-opacity-40 p-8 rounded-lg">
                 <h1 class="text-4xl md:text-6xl font-playfair font-bold text-white mb-4">Weaving Dreams into Fabric</h1>
@@ -60,27 +45,31 @@
             </div>
         </section>
 
+        <!-- Portfolio Section -->
         <section id="portfolio" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-playfair font-bold text-center mb-2">Portfolio</h2>
                 <p class="text-center text-gray-600 mb-12">A selection of my signature collections.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item 1 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg gallery-img">
-                        <img src="https://placehold.co/600x800/d1d5db/374151?text=Urban+Elegance" alt="Urban Elegance Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/d1d5db/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/9721473/pexels-photo-9721473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Urban Elegance Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/d1d5db/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-playfair font-semibold mb-2">Urban Elegance</h3>
                             <p class="text-gray-600">A collection that blends modern city life with classic silhouettes.</p>
                         </div>
                     </div>
+                    <!-- Portfolio Item 2 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg gallery-img">
-                        <img src="https://placehold.co/600x800/e5e7eb/374151?text=Ethereal+Gowns" alt="Ethereal Gowns Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/e5e7eb/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/10366223/pexels-photo-10366223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ethereal Gowns Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/e5e7eb/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-playfair font-semibold mb-2">Ethereal Gowns</h3>
                             <p class="text-gray-600">Dreamy and delicate gowns for unforgettable moments.</p>
                         </div>
                     </div>
+                    <!-- Portfolio Item 3 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg gallery-img">
-                        <img src="https://placehold.co/600x800/f3f4f6/374151?text=Avant-Garde" alt="Avant-Garde Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/f3f4f6/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/10366227/pexels-photo-10366227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Avant-Garde Collection" class="w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x800/f3f4f6/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <h3 class="text-2xl font-playfair font-semibold mb-2">Avant-Garde</h3>
                             <p class="text-gray-600">Pushing the boundaries of fashion with bold and artistic designs.</p>
@@ -90,10 +79,11 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="bg-white py-20">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x700/9ca3af/ffffff?text=dabubu+signature" alt="Fashion Designer dabubu signature" class="rounded-lg shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x700/9ca3af/ffffff?text=Image+Not+Found';">
+                    <img src="https://images.pexels.com/photos/10398670/pexels-photo-10398670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Fashion Designer dabubu signature" class="rounded-lg shadow-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x700/9ca3af/ffffff?text=Image+Not+Found';">
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-4xl font-playfair font-bold mb-4">My Philosophy</h2>
@@ -107,13 +97,15 @@
             </div>
         </section>
 
+        <!-- Journal/Blog Section -->
         <section id="journal" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-playfair font-bold text-center mb-2">From My Journal</h2>
                 <p class="text-center text-gray-600 mb-12">Insights, inspirations, and stories from behind the seams.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="https://placehold.co/600x400/d1d5db/374151?text=Inspiration" alt="Inspiration Moodboard" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d1d5db/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/9721473/pexels-photo-9721473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Inspiration Moodboard" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d1d5db/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">July 22, 2024</p>
                             <h3 class="text-xl font-playfair font-semibold mb-3">The Art of Inspiration</h3>
@@ -121,8 +113,9 @@
                             <a href="#" class="text-gray-800 font-semibold hover:underline">Read More &rarr;</a>
                         </div>
                     </div>
+                    <!-- Blog Post 2 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="https://placehold.co/600x400/e5e7eb/374151?text=Fabric+Selection" alt="Fabric Swatches" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5e7eb/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/10366223/pexels-photo-10366223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fabric Swatches" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5e7eb/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">July 15, 2024</p>
                             <h3 class="text-xl font-playfair font-semibold mb-3">Choosing the Right Fabric</h3>
@@ -130,8 +123,9 @@
                             <a href="#" class="text-gray-800 font-semibold hover:underline">Read More &rarr;</a>
                         </div>
                     </div>
+                    <!-- Blog Post 3 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                        <img src="https://placehold.co/600x400/f3f4f6/374151?text=Sketching" alt="Fashion Sketches" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/374151?text=Image+Not+Found';">
+                        <img src="https://images.pexels.com/photos/10366227/pexels-photo-10366227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fashion Sketches" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f3f4f6/374151?text=Image+Not+Found';">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">July 08, 2024</p>
                             <h3 class="text-xl font-playfair font-semibold mb-3">From Sketch to Reality</h3>
@@ -143,6 +137,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="bg-white py-20">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto text-center">
@@ -157,11 +152,22 @@
                             <label for="email" class="block text-gray-700 mb-2">Email</label>
                             <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required>
                         </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 mb-2">Message</label>
                             <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" required></textarea>
                         </div>
-                        <div class="text-center">
+                        <div class="flex flex-col sm:flex-row items-center justify-between text-center gap-4">
+                            <button type="button" id="suggest-subject-btn" class="bg-blue-500 text-white py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 text-lg">✨ Suggest Subject Line</button>
+                            <div id="loading-spinner" class="hidden">
+                                <svg class="animate-spin h-6 w-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </div>
                             <button type="submit" class="bg-gray-800 text-white py-3 px-8 rounded-full hover:bg-gray-700 transition duration-300 text-lg">Send Message</button>
                         </div>
                     </form>
@@ -170,6 +176,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6 text-center">
             <p class="text-2xl font-playfair mb-4">dabubu signature</p>
@@ -182,31 +189,8 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu on link click
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // The old contact form javascript has been removed.
-        // Formspree will handle the submission now.
-    </script>
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>
