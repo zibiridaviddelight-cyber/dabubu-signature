@@ -64,3 +64,108 @@ modal.addEventListener('click', (e) => {
         modal.classList.add('hidden');
     }
 });
+
+// === NEW FEATURE: Scroll-to-Top Button ===
+// A small button that appears after scrolling down and scrolls the user back to the top of the page.
+const scrollToTopButton = document.createElement('button');
+scrollToTopButton.innerHTML = '&uarr;'; // Up arrow
+scrollToTopButton.classList.add('fixed', 'bottom-4', 'right-4', 'bg-gray-800', 'text-white', 'p-3', 'rounded-full', 'shadow-lg', 'transition-opacity', 'duration-300', 'hover:bg-gray-700', 'focus:outline-none', 'z-50', 'opacity-0');
+document.body.appendChild(scrollToTopButton);
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 200) {
+        scrollToTopButton.classList.remove('opacity-0');
+    } else {
+        scrollToTopButton.classList.add('opacity-0');
+    }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// === NEW FEATURE: Gemini-powered Subject Line Suggester ===
+const suggestSubjectBtn = document.getElementById('suggest-subject-btn');
+const messageInput = document.getElementById('message');
+const subjectInput = document.getElementById('subject');
+const loadingSpinner = document.getElementById('loading-spinner');
+
+// Add event listener to the "Suggest Subject Line" button
+suggestSubjectBtn.addEventListener('click', async () => {
+    const userMessage = messageInput.value.trim();
+    if (userMessage === '') {
+        subjectInput.value = 'Please write a message first.';
+        return;
+    }
+
+    loadingSpinner.classList.remove('hidden');
+    subjectInput.value = 'Generating...';
+    subjectInput.disabled = true;
+
+    // The prompt for the Gemini API
+    const prompt = `Based on the following message, generate a single, concise, professional email subject line. Do not include any other text besides the subject line.
+    
+    Message: "${userMessage}"
+    
+    Subject:`;
+
+    let retries = 0;
+    const maxRetries = 5;
+    const initialDelay = 1000; // 1 second
+
+    while (retries < maxRetries) {
+        try {
+            const payload = {
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }]
+            };
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                // If the response is not ok, throw an error to trigger the catch block
+                throw new Error(`API call failed with status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            const generatedText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+            if (generatedText) {
+                subjectInput.value = generatedText.trim();
+                break; // Exit the loop on success
+            } else {
+                subjectInput.value = 'Error generating subject.';
+                console.error('API response was not in the expected format.');
+                break;
+            }
+
+        } catch (error) {
+            console.error('Error calling Gemini API:', error);
+            retries++;
+            if (retries < maxRetries) {
+                const delay = initialDelay * Math.pow(2, retries);
+                await new Promise(res => setTimeout(res, delay));
+            } else {
+                subjectInput.value = 'Failed to generate. Please try again later.';
+            }
+        } finally {
+            loadingSpinner.classList.add('hidden');
+            subjectInput.disabled = false;
+        }
+    }
+});
